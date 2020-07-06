@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <title>forms</title>
+</head>
+    First name:<br>
+    <input type="text" name="firstName" value="">
+    <br>
+    Last name:<br>
+    <input type="text" name="lastName" value="">
+    <br>Datum<br>
+    <input type="date">
+    <br>
+    Geschlecht: <input type="radio" value="male"> Maennlich
+    <input type="radio" value="female"> Weiblich
+    <input type="radio" value="other"> Divers
+    <br><br />
+    Hobbies:
+    <select name="Hobbies">
+        <option value="Fussball">Fussball</option>
+        <option value="Basketball">Basketball</option>
+        <option value="Hockey">Hockey</option>
+        <option value="Tennis">Tennis</option>
+        <option value="Mountainbiking">MTB</option>
+    </select>
+    <br><br/>
+    Bemerkung:<br>
+    <textarea name="bemerkung" rows="5" cols="20"></textarea>
+    <br><br/>
+    Lieblingsfarbe:
+   <label><input type="color" name="Farbe"></label> 
+    <br><br/>
+    <input type="submit" value="Einfügen">
+
+
+
+
+    <script> // script to add the form content to the table
+        let form = document.querySelector("form")
+        form.onsubmit = event => {
+            // alert("Formular wird abgesendet")
+            event.preventDefault()
+
+            // create first cell content
+            let firstName = document.querySelector("[name=firstName]").value;
+            let firstNameCell = document.createElement("td");
+            firstNameCell.innerText = firstName;
+
+            // create second cell content
+            let lastName = document.querySelector("[name=lastName]").value;
+            let secondNameCell = document.createElement("td");
+            secondNameCell.innerText = lastName;
+
+            // create third cell content
+            let birthday = document.querySelector("[name=birthday]").value;
+            let thirdNameCell = document.createElement("td");
+            thirdNameCell.innerText = birthday;
+
+            // create fourth cell content
+            let gender = Array.from(document.querySelectorAll("[name=gender]:checked")).map(option => option.value);
+            let fourthNameCell = document.createElement("td");
+            fourthNameCell.innerText = gender;
+
+            // create fifth cell content
+            let hobbies = Array.from(document.querySelectorAll("[name=hobbies]:checked")).map(option => option.value);
+            let fifthNameCell = document.createElement("td");
+            fifthNameCell.innerText = hobbies
+            //alert(hobbies.join(","));
+
+            let favoriteSchoolSubject = document.querySelector("[name=favoriteSchoolSubject] option:checked").value;
+            let sixthNameCell = document.createElement("td");
+            sixthNameCell.innerText = favoriteSchoolSubject;
+
+            let message = document.querySelector("[name=message]").value;
+            let seventhNameCell = document.createElement("td");
+            seventhNameCell.innerText = message;
+
+            let favouriteColor = document.querySelector("[name=favouriteColor]").value;
+            let eighthNameCell = document.createElement("td");
+            eighthNameCell.innerText = favouriteColor;
+
+            // get first table-body and create a table-row element
+            let tableBody = document.querySelector("table tbody")
+            let row = document.createElement("tr")
+
+            // create row with table data content
+            row.appendChild(firstNameCell);
+            row.appendChild(secondNameCell);
+            row.appendChild(thirdNameCell);
+            row.appendChild(fourthNameCell);
+            row.appendChild(fifthNameCell);
+            row.appendChild(sixthNameCell);
+            row.appendChild(seventhNameCell);
+            row.appendChild(eighthNameCell);
+
+            // add row to table-body, adress of table-body is defined in the variable "tableBody"
+            tableBody.appendChild(row);
+
+            form.reset();
+        }
+    </script>
+
+
+
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+<head>
+    <title>
+     Quadrat im Mittelpunkt
+    </title>
+    <link rel="stylesheet" href="main.css" />
+</head>
+
+<body>
+    <h1>Quadrat im Mittelpunkt</h1>
+    <canvas id="scene" width="500" height="500" style="border: 1px dashed black"></canvas>
+    <script>
+        /** @type {CanvasRenderingContext2D} */
+        let ctx = scene.getContext("2d")
+        
+       
+
+     let strokeRectWidthCenterPoint = (x, y, length, width, color) =>
+     {
+     ctx.lineWidth = width
+     ctx.strokeStyle = color
+     ctx.strokeRect(x, y, length,length)
+     }
+
+    strokeRectWidthCenterPoint(150, 150, 50, 7, "green")
+    strokeRectWidthCenterPoint(125, 125, 100, 2, "orange")
+    strokeRectWidthCenterPoint(120, 120, 110, 3, "brown")
+    strokeRectWidthCenterPoint(100, 100, 150, 10, "blue")
+
+
+    </script>
+</body>
+
+</html>
+
+

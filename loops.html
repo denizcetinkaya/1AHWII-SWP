@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+<head>
+    <title>
+        Loops
+    </title>
+    <link rel="stylesheet" href="main.css" />
+</head>
+
+<body>
+    <h1>Loops</h1>
+    <canvas id="scene" width="500" height="500" style="border: 1px dashed black"></canvas>
+    <script>
+        /** @type {CanvasRenderingContext2D} */
+        let ctx = scene.getContext("2d")
+        // Variable mit Namen offset anlegen (=deklarieren) und 
+        //die Zahl 5 darin merken   
+        let offset = 10
+        let size = 5
+        // Anweisungen in der Schleife werden so lange wiederholt,
+        //so lange die Aussage wahr ist.
+        while (offset < 200) {
+            ctx.strokeRect(offset, offset, size, size)
+            // WICHTIG: Variabe offset muss verändert werden damit die Bedingung in der Schleife beendet werden kann.
+            //Ansonsten erhaelt man eine sich endlos wiederholende Schleife.
+            offset = offset + 10
+            size = size + 5
+        }
+        //TODO  1. konzentrische Quadrate 
+        //      2. konzentrische Kreise
+        //      3. strichlierten Kreis
+
+        let Quadrat = 10
+
+        while (Quadrat < 200) {
+            ctx.strokeRect(Quadrat - size / 2, Quadrat - size / 2, size, size)
+            Quadrat = Quadrat + 10
+            size = size + 20
+
+            //viele schleifen funktionieren folgendermaßen:
+            //*vor der schleife wird eine variable 'a' auf einen bestimten anfangswert gesetzt.
+            //*vor jede durchlauf der schleife wir mithilfe der variable 'a' geprüft ob die anweisungen in der 
+            //schleife ausgefuehrt werden sollen. 
+            //*nach jedem schleifendurchlauf  wird die variable 'a' verändert,
+            //sodass obige bedingungen eventuel nicht mehr erfuellt wird und die schleife dadurch beendet wird.
+            //fuer solche schleifen gibt es eine alternative, etwas kuerzere 
+            //schreibweise:
+
+            ctx.strokeStyle = "steelblue"
+            for (let a = 5; a < 100; a = a + 10)
+            {
+                ctx.strokeRect(a + 150, a, 50, 50)
+            
+            }
+            //Fuer 'a = a + 10' gibt es noch eine kuerzere schreibweise: 'a+= 10'
+            //(gilt auch fuer die operatoren '-' '*' und '/')
+            // Fuer das erhoehen einer variable um 1 gibt es noch eine kuerzere
+            // Schreibweise: 'a++' (gilt auch fuer '-')  (.)(.)
+            //Uebungen:
+            // 1. while-Uebungen von letztem mal auf 'for' uebersetzen
+            // 2. Balkendiagramm zeichnen
+
+
+            
+
+
+            //      _
+            //    _| |
+            //  _| | |
+            // |_|_|_|
+
+
+            //
+            // |
+            // |
+            // |
+        }
+
+
+    </script>
+</body>
+
+</html>

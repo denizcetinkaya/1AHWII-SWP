@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+<head>
+    <title>
+       AbstrakteKunst
+    </title>
+    <link rel="stylesheet" href="main.css" />
+</head>
+
+<body>
+    <h1>AbstrakteKunst</h1>
+    <canvas id="scene" width="500" height="500" style="border: 1px dashed black"></canvas>
+    <script>
+        //Autovervollständigung für Canvas-Befehle einschalten
+        /** @type {CanvasRenderingContext2D} */
+        let ctx = scene.getContext("2d")
+
+        ctx.fillStyle ="ChartReuse"
+        ctx.fillRect(59.5, 8, 380, 50)
+        ctx.fillRect(59.5, 438, 380, 50)
+
+        ctx.fillStyle = "Brown"
+        ctx.fillRect(8.5, 58, 50, 380)
+        ctx.fillRect(440, 58, 50, 380)
+
+        ctx.lineWidth ="50"
+        ctx.strokeStyle="DarkOrange"
+        ctx.beginPath()
+        ctx.arc(250, 248, 190, 0, 180)
+        ctx.stroke()
+    </script>
+</body>
+
+</html>
+
+
+
